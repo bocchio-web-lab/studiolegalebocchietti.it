@@ -1,0 +1,88 @@
+body {
+	font-size: 11px;
+	color: #000060;
+	background-color: #ffffff;
+	font-family: verdana, times new roman, times, helvetica;
+    margin-top : 0px;
+    margin-left : 0px;
+    margin-right : 0px;
+    margin-bottom : 0px;
+}
+font {
+	font-size: 11px;
+	color: #ffffff;
+	font-family: verdana, times new roman, times, helvetica;
+}
+td {
+	font-size: 11px;
+	color: #ffffff;
+	font-family: verdana, times new roman, times, helvetica;
+}
+p {
+	font-size: 11px;
+	color: #ffffff;
+	font-family: verdana, times new roman, times, helvetica;
+}
+p.blue {
+	font-size: 11px;
+	color: #000060;
+	font-family: verdana, times new roman, times, helvetica;
+}
+div {
+	font-size: 11px;
+	color: #ffffff;
+	font-family: verdana, times new roman, times, helvetica;
+}
+input {
+	font-size: 11px;
+	color: #000000;
+	background-color: #cecece;
+	font-family: verdana, times new roman, times, helvetica;
+}
+textarea {
+	font-size: 11px;
+	color: #000000;
+	background-color: #cecece;
+	font-family: verdana, times new roman, times, helvetica;
+}
+a:link, a:active, a:visited {
+	font-size: 11px;
+	color: #ffffff;
+	font-family: verdana, times new roman, times, helvetica;
+	text-decoration: none
+}
+a:hover {text-decoration: underline; color: #ffffff
+}
+li {
+	color: #ff6633;
+}
+.menu {
+	font-family: verdana, helvetica;
+	font-weight: bold;
+	font-size: 10px;
+	color: #000000;
+	text decoration: none
+}
+p.blue a:link, p.blue a:active, p.blue a:visited {
+	font-family: verdana, helvetica;
+	font-size: 11px;
+	color: #000060;
+}
+p.blue a:hover {
+	font-family: verdana, helvetica;
+	font-size: 11px;
+	color: #000060;
+	text-decoration:underline
+}
+.td11 { background-color : #005267; 
+}
+.td12 { background : #417b88 url(../immagini/sf_02.gif); 
+}
+.td21 { background-color : #ff6633; 
+}
+.td22 { background-color : #fafafa; 
+}
+.td31 { background-color : #88aedd; 
+}
+.td32 { background-color : #cad9ff; 
+}
