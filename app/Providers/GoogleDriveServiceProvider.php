@@ -10,6 +10,7 @@ use Google\Service\Drive;
 use Masbug\Flysystem\GoogleDriveAdapter;
 use League\Flysystem\Filesystem;
 use Illuminate\Filesystem\FilesystemAdapter;
+use GuzzleHttp\Client as GuzzleHttp;
 
 class GoogleDriveServiceProvider extends ServiceProvider
 {
@@ -40,7 +41,9 @@ class GoogleDriveServiceProvider extends ServiceProvider
                     $options['sharedFolderId'] = $config['sharedFolderId'];
                 }
 
+                $guzzle = new GuzzleHttp(['verify' => false]);
                 $client = new Client();
+                $client->setHttpClient($guzzle);
                 $client->setClientId($config['clientId']);
                 $client->setClientSecret($config['clientSecret']);
                 $client->refreshToken($config['refreshToken']);

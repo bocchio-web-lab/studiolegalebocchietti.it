@@ -42,6 +42,28 @@ class GoogleDriveHelper
                     $result['children'][] = self::create_folder_structure($itemPath);
                 }
             }
+
+            usort($result['children'], function ($a, $b) {
+                // Extract leading numbers if present
+                preg_match('/^(\d+)/', $a['name'], $matchA);
+                preg_match('/^(\d+)/', $b['name'], $matchB);
+
+                $numA = isset($matchA[1]) ? intval($matchA[1]) : null;
+                $numB = isset($matchB[1]) ? intval($matchB[1]) : null;
+
+                // If both have leading numbers, compare numerically
+                if ($numA !== null && $numB !== null) {
+                    return $numA - $numB;
+                }
+
+                // If only one has leading number, put it first
+                if ($numA !== null) return -1;
+                if ($numB !== null) return 1;
+
+                // Otherwise, fall back to regular string comparison
+                return strcasecmp($a['name'], $b['name']);
+            });
+
         } catch (FilesystemException $exception) {
             $result['error'] = $exception->getMessage();
         }

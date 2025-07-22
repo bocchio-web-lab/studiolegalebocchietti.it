@@ -18,7 +18,21 @@ class VademecumController extends Controller
     {
         $vademecumObj = array(GoogleDriveHelper::create_folder_structure(self::$basePath));
 
-        $fileID = $request->input('ID') ?? '11EGxOU9MwVln8nGce_iBQahuEkldIkPf';
+        if ($request->input('ID')) {
+
+            $fileID = $request->input('ID');
+
+        } else {
+
+            foreach ($vademecumObj[0]['children'] as $item) {
+                if ($item['type'] === 'file') {
+                    $fileID = $item['ID'];
+                    break;
+                }
+            }
+
+        }
+
         $fileURL = GoogleDriveHelper::findUrlById($vademecumObj[0], $fileID);
 
         return response()->view('pages.vademecum', [

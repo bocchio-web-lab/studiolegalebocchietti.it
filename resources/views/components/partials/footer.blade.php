@@ -5,8 +5,8 @@
         <ul class="w-full mx-auto my-2 justify-center md:inline-flex md:my-1">
             <li><a href="https://maps.app.goo.gl/qp5u4bQz2zsERex3A" target="_blank">Via Volta
                     40, 22100 Como</a></li>
-            <li>Tel. <a href="tel:031264110">+39 031-26.41.10</a></li>
-            <li>Fax. +39 031-26.02.07</li>
+            <li>Tel. <a href="tel:031264110">+39 031-264110</a></li>
+            <li>Cell. <a href="tel:3396450977">+39 3396450977</a></li>
         </ul>
 
         <ul class="w-full mx-auto my-2 justify-center md:inline-flex md:my-1">

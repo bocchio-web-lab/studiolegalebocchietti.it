@@ -18,7 +18,21 @@ class CurriculaController extends Controller
     {
         $curriculaObj = array(GoogleDriveHelper::create_folder_structure(self::$basePath));
 
-        $fileID = $request->input('ID') ?? $curriculaObj[0]['children'][0]['ID'];
+        if ($request->input('ID')) {
+
+            $fileID = $request->input('ID');
+
+        } else {
+
+            foreach ($curriculaObj[0]['children'] as $item) {
+                if ($item['type'] === 'file') {
+                    $fileID = $item['ID'];
+                    break;
+                }
+            }
+
+        }
+
         $fileURL = GoogleDriveHelper::findUrlById($curriculaObj[0], $fileID);
 
         return response()->view('pages.curricula', [
