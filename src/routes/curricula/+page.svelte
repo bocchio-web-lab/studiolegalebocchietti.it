@@ -1,22 +1,30 @@
 <script lang="ts">
     import TreeView from "$lib/components/treeview.svelte";
+    import type { PageData } from "./$types";
 
-    export let data: {
-        vademecumObj: any[];
-        fileURL?: string;
-        fileID?: string;
-    };
+    export let data: PageData;
+
+    $: ({ curriculaObj, fileID, fileURL } = data);
 </script>
 
+<svelte:head>
+    <title>Curricula</title>
+    <meta
+        name="description"
+        content="Curriculum vitae e profili professionali redatti dall'avvocato Claudio Bocchietti"
+    />
+</svelte:head>
+
 <section>
-    <p>Di seguito i documenti relativi alle aste:</p>
+    <p>Di seguito i documenti relativi ai curricula:</p>
+    <br />
 
-    <TreeView data={data.vademecumObj} />
+    <TreeView data={curriculaObj.children || []} />
 
-    {#if data.fileURL}
+    {#if fileURL}
         <p class="text-center my-7">
             <a
-                href={data.fileURL}
+                href={fileURL}
                 class="bg-sky-900 rounded-full py-2 px-4 text-white"
                 target="_blank"
             >
@@ -25,12 +33,12 @@
         </p>
     {/if}
 
-    {#if data.fileID}
+    {#if fileID}
         <iframe
-            class="my-5 w-full aspect-video rounded-xl shadow"
-            src={`https://drive.google.com/file/d/${data.fileID}/preview`}
+            class="my-5 w-full rounded-xl shadow"
+            src={`https://drive.google.com/file/d/${fileID}/preview`}
             allowfullscreen
-            title=""
+            title="Curriculum Document"
         ></iframe>
     {/if}
 </section>

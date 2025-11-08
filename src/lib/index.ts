@@ -1,3 +1,10 @@
+export const DEFAULT_DRIVE_IDS = {
+    CURRICULA_FOLDER_ID: '1l4f69Bae984BupFNMdvBYmUo8ufbQuI_',
+    VADEMECUM_FOLDER_ID: '1bFvVQtDhalGtYH5H6nGUIlW254xr4iwV',
+    CURRICULA_DEFAULT_FILE_ID: '14R25eVYPsGOCdNjmtpz8IZlOd-StBBVC',
+    VADEMECUM_DEFAULT_FILE_ID: '1SnjmcjqG7H4qP7ffScqPKc8W8gs7MvhV'
+} as const;
+
 export const EMAILS = {
     MASTER: 'tommaso.bocchietti@gmail.com',
     BOCCHIETTI: 'bocchietti@studiolegalebocchietti.it',

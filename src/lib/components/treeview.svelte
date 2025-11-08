@@ -1,12 +1,8 @@
 <script lang="ts">
     import TreeView from "./treeview.svelte";
+    import type { FileItem } from "$lib/types";
 
-    export let data: {
-        type: "folder" | "file";
-        name: string;
-        ID?: string;
-        children?: any[];
-    }[] = [];
+    export let data: FileItem[];
 
     import { page } from "$app/stores";
 
