@@ -7,22 +7,18 @@
     import { page } from "$app/stores";
     import { derived } from "svelte/store";
 
-    const titleExceptions: Record<string, string> = {
+    const titleMap: Record<string, string> = {
         "/": "Home",
+        "/curricula": "Curricula",
         "/attivita": "Attività",
         "/vademecum": "Vademecum aste immobiliari",
+        "/contatti": "Contatti",
+        "/avvertenze": "Avvertenze legali",
     };
 
     const pageTitle = derived(page, ($page) => {
         const path = $page.url.pathname;
-
-        if (titleExceptions[path]) return titleExceptions[path];
-
-        const parts = path.split("/").filter(Boolean);
-        if (parts.length === 0) return "Home";
-
-        const title = parts[parts.length - 1];
-        return title.charAt(0).toUpperCase() + title.slice(1);
+        return titleMap[path] ?? null;
     });
 </script>
 
