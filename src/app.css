@@ -1,1 +1,40 @@
 @import 'tailwindcss';
+
+@layer base {
+
+    body {
+        font-family: verdana, 'times new roman', times, helvetica;
+    }
+
+    a {
+        @apply underline;
+    }
+
+    a:hover {
+        @apply text-orange-400;
+    }
+
+    hr {
+        @apply h-px;
+        @apply my-4;
+        @apply mx-auto;
+        @apply w-11/12;
+        @apply text-gray-200;
+    }
+
+    footer>nav>ul>li {
+        @apply md:after:content-['|'];
+        @apply md:after:mx-2;
+    }
+
+    footer>nav>ul>li:last-child {
+        @apply md:after:content-none;
+    }
+
+    iframe {
+        @apply w-full;
+        @apply max-h-screen;
+        @apply rounded-lg;
+        @apply aspect-[1/1.4]
+    }
+}
