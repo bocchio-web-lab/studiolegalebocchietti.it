@@ -1,38 +1,42 @@
-# sv
+# Studio Legale Bocchietti
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Official website of `Studio Legale Bocchietti`, a law firm based in Como, Italy.
+Built to present the firm’s work, team, and recent publications.
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Overview
 
-```sh
-# create a new project in the current directory
-npx sv create
+The website provides information about the firm's legal services, professional activities, contact details, and team curricula.
+Additionally, it features a vademecum section that offers practical legal guidance and resources for visitors.
 
-# create a new project in my-app
-npx sv create my-app
-```
+<div align="center">
+    <img src="docs/assets/homepage.png" alt="Homepage Screenshot" width="600">
+    <p>Homepage of Studio Legale Bocchietti</p>
+</div>
 
-## Developing
+### Google Drive Integration
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+The website integrates with the `Google Drive API` to dynamically retrieve and display documents from remote folders.
+This integration enables the firm to embed legal publications, curricula, and other documents directly on the website.
+Files are fetched server-side and organized in a hierarchical structure, allowing visitors to browse and view embedded documents without manual updates to the codebase.
 
-```sh
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
 
-## Building
+## Technology Stack
 
-To create a production version of your app:
+The website is built using `SvelteKit 5` and `Tailwind CSS` for styling.
+Server-side functionality is handled by SvelteKit's server routes, which interface with the `Google Drive API` through the `googleapis` package.
+The application is currently hosted on `Netlify`.
 
-```sh
-npm run build
-```
 
-You can preview the production build with `npm run preview`.
+### Development and Deployment
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+As reported in the `package.json`, the main commands for development and deployment are:
+- `npm run dev`: Starts the development server with hot-reloading.
+- `npm run build`: Builds the application for production.
+- `npm run preview`: Previews the production build locally.
+
+
+Have a nice coding day,
+
+Tommaso :panda_face:
