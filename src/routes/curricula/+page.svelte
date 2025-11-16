@@ -16,9 +16,6 @@
 </svelte:head>
 
 <section>
-    <p>Di seguito i documenti relativi ai curricula:</p>
-    <br />
-
     <TreeView data={curriculaObj.children || []} />
 
     {#if fileURL}
